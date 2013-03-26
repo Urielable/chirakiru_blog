@@ -1,1 +1,19 @@
-<p>Hola!</p>
+.container
+  .row.post-data
+    .span9
+      %a.post-title{:href => "#"} ¡Hola, mundo!
+      %p.post-date 2013 / 03 / 06
+  .row.post-body
+    .span9
+      %p
+        %blockquote
+          La programación de computadoras es un arte, porque implica un conocimiento acumulado del mundo, porque requiere habilidad e ingenio, y especialmente porque produce objetos de belleza. Un programador que subconscientemente se ve a sí mismo como un artista disfrutará lo que hace y lo hará mejor.
+        .pull-right &mdash; Donald Knuth
+    .span9.post-tags
+      %a{:href => "#"} #lorem
+      %a{:href => "#"} #ipsum
+      %a{:href => "#"} #dolor
+  %hr/
+  #pagination
+    %a.pull-left{:href => "#"} ← Pasado
+    %a.pull-right{:href => "#"} Presente →
