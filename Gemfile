@@ -18,6 +18,12 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'haml-rails', '0.4'
+end
+
+group :development do
+  gem 'erb2haml', '0.1.4'
+  gem 'html2haml', '1.0.1'
 end
 
 gem 'jquery-rails'
