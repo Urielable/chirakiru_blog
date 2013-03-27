@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass', '2.3.1.0'
   gem 'turbolinks', '1.1.0'
+  gem 'modernizr', '2.6.2'
 end
 
 group :development do
