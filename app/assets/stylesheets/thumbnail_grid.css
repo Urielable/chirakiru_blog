@@ -19,6 +19,7 @@
     outline: none;
     display: block;
     position: relative;
+    border-radius: 120px 120px 120px 120px;
 }
 
 .og-grid li.og-expanded > a::after {
