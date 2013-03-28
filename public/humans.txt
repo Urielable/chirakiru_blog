@@ -1,23 +1,23 @@
 /* TEAM */                  
-Líder del planeta Mostacho: Adrian Ayala                      
+Lider del planeta Mostacho: Adrian Ayala                      
 Site: xmomentum.info
 Twitter: @adrrian17
-Location: Monterrey, México
+Location: Monterrey, Mexico
 
-Presidente de la galaxia: Daniel Martínez                      
+Presidente de la galaxia: Daniel Martinez                      
 Site: N/A
 Twitter: @dtumbolia
-Location: Monterrey, México
+Location: Monterrey, Mexico
 
-Líder sindical de las galaxias: Héctor Castro                      
+Líder sindical de las galaxias: Hector Castro                      
 Site: marhabed.blogspot.mx
 Twitter: @marhabed
-Location: Monterrey, México
+Location: Monterrey, Mexico
 
 Presidente del universo: Uriel Molina                      
 Site: N/A
 Twitter: @urielable
-Location: Monterrey, México
+Location: Monterrey, Mexico
                             
 /* SITE */                  
 Last update: 2013/03/28                   
