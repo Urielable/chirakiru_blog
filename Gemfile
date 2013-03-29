@@ -6,7 +6,10 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'haml-rails', '0.4'
+gem 'bson_ext', '1.8.4'
+gem 'mongo', '1.8.4'
+gem 'mongoid', '3.1.2'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +24,7 @@ group :assets do
   gem 'bootstrap-sass', '2.3.1.0'
   gem 'turbolinks', '1.1.0'
   gem 'modernizr', '2.6.2'
+  gem 'haml-rails', '0.4'
 end
 
 group :development do

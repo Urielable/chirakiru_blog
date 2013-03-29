@@ -60,5 +60,6 @@ module ChirakiruBlog
     config.assets.version = '1.0'
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    Mongoid.load!("config/mongoid.yml")
   end
 end
