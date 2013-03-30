@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'bson_ext', '1.8.4'
 gem 'mongo', '1.8.4'
 gem 'mongoid', '3.1.2'
+gem 'bcrypt-ruby', '3.0.1'
 
 
 # Gems used only for assets and not required
