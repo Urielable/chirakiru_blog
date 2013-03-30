@@ -30,6 +30,10 @@ class Admin::Author
     self.password_digest = BCrypt::Password.create new_password
   end
 
+  def authenticate password_attempt
+    BCrypt::Password.new(self.password_digest) == password_attempt
+  end
+
   protected
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64

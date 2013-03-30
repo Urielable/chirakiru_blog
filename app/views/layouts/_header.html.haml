@@ -8,3 +8,6 @@
     %a{:href => files_path} archivo
     %span /
     %a{:href => friends_path} amigos
+    - if signed_in?
+      %span /
+      %a{:href => admin_dashboard_index_path} dashboard

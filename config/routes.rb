@@ -2,9 +2,9 @@ ChirakiruBlog::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   get '/login',  to: 'sessions#new'
   delete '/logoff', to: 'sessions#destroy', via: :delete
-
   namespace :admin do
     resources :authors
+    resources :dashboard, only: [:index]
   end
   resources :files, only: [:index]
   resources :friends, only: [:index]

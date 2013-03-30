@@ -1,3 +1,7 @@
 #chirakiru-start
-  %a{ href:login_path }
-    %i.icon-home.icon-whit{ title: 'Inicia sesión' }
+  - if signed_in?
+    %a{ href:logoff_path, 'data-no-turbolink' => true, 'data-method' => :delete,  }
+      %i.icon-off{ title: 'Terminar sesión' }
+  - else
+    %a{ href:login_path }
+      %i.icon-home{ title: 'Inicia sesión' }
