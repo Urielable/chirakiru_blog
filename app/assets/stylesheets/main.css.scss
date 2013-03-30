@@ -84,11 +84,12 @@ a, a:link, a:hover, a:visited {
   line-height: normal;
   padding-top: 10px;
   margin: 0 0 5px 0;
+  &:first-letter {
+    font-size: 40px;
+  }
 }
 
-.header-title:first-letter {
-  font-size: 40px;
-}
+
 
 .post-data {
   text-align: center;

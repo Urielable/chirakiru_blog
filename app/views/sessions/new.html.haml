@@ -1,0 +1,24 @@
+- provide(:title, 'Inicio de sesión')
+
+.container.dialog
+  %header
+    %h1.header-title Inicio
+  .row-fluid.dialog-main
+    = form_for(:session, url: sessions_path) do |f|
+      .row-fluid
+        .span12
+          .span5
+            %label Email:
+          .span6
+            = f.text_field :email
+      .row-fluid
+        .span12
+          .span5
+            %label Contraseña:
+          .span6
+            = f.password_field :password
+      .form-actions
+        = f.submit "Entrar", class:"btn btn-success pull-right"
+%br
+%br
+%br

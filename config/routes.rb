@@ -1,4 +1,8 @@
 ChirakiruBlog::Application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
+  get '/login',  to: 'sessions#new'
+  delete '/logoff', to: 'sessions#destroy', via: :delete
+
   namespace :admin do
     resources :authors
   end
