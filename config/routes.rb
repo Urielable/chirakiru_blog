@@ -1,4 +1,7 @@
 ChirakiruBlog::Application.routes.draw do
+  namespace :admin do
+    resources :authors
+  end
   resources :files, only: [:index]
   resources :friends, only: [:index]
   root :to => 'posts#index'

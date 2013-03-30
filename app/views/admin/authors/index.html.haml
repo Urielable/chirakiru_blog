@@ -1,0 +1,27 @@
+%h1 Listing admin_authors
+
+%table.table.table-striped.table-hover
+  %tr
+    %th First name
+    %th Last name
+    %th Nickname
+    %th Acronym
+    %th Email
+    %th
+    %th
+    %th
+
+  - @admin_authors.each do |admin_author|
+    %tr
+      %td= admin_author.first_name
+      %td= admin_author.last_name
+      %td= admin_author.nickname
+      %td= admin_author.acronym
+      %td= admin_author.email
+      %td= link_to 'Show', admin_author
+      %td= link_to 'Edit', edit_admin_author_path(admin_author)
+      %td= link_to 'Destroy', admin_author, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Author', new_admin_author_path

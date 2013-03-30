@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @admin_author.first_name
+%p
+  %b Last name:
+  = @admin_author.last_name
+%p
+  %b Nickname:
+  = @admin_author.nickname
+%p
+  %b Acronym:
+  = @admin_author.acronym
+%p
+  %b Email:
+  = @admin_author.email
+%p
+  %b Password digest:
+  = @admin_author.password_digest
+%p
+  %b Remember token:
+  = @admin_author.remember_token
+
+= link_to 'Edit', edit_admin_author_path(@admin_author)
+\|
+= link_to 'Back', admin_authors_path
