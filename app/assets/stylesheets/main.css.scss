@@ -7,6 +7,9 @@ body {
 header {
   background-color: rgba(59,146,204,1);
   margin-bottom: 50px;
+  //sin aprobación de adrian, pero vale madre
+  width: 100%;
+  position: fixed;
 }
 
 footer {
@@ -34,6 +37,9 @@ a, a:link, a:hover, a:visited {
 
 .site {
   background: rgba(255,255,255,1);
+  .page-view {
+    padding-top: 150px;
+  }
 }
 
 .container {
@@ -88,8 +94,6 @@ a, a:link, a:hover, a:visited {
     font-size: 40px;
   }
 }
-
-
 
 .post-data {
   text-align: center;
