@@ -6,10 +6,11 @@ body {
 
 header {
   background-color: rgba(59,146,204,1);
-  margin-bottom: 50px;
   //sin aprobación de adrian, pero vale madre
-  width: 100%;
-  position: fixed;
+  &.navbar {
+    width: 100%;
+    position: fixed;
+  }
 }
 
 footer {

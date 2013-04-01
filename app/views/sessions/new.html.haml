@@ -1,7 +1,7 @@
 - provide(:title, 'Inicio de sesión')
 
 .container.dialog
-  %header
+  %header.box
     %h1.header-title Inicio
   .row-fluid.dialog-main
     = form_for(:session, url: sessions_path) do |f|
