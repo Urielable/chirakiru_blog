@@ -14,7 +14,7 @@ $borderRadius: 8px;
   header.box {
     margin-bottom: 0;
     background-color: rgba(147, 205, 118, 1);
-    .header-title {  
+    .header-title {
       font-weight: normal;
       font-family: OpenSansRegular;
       text-transform: uppercase;
@@ -27,9 +27,18 @@ $borderRadius: 8px;
     margin-top: -6px;
     padding-left: 6px;
     padding-top: 20px;
-    width: 98%;
-    input:focus {
-      background: none repeat scroll 0 0 #F4F7F9;
+    $inputsHeight: 40px;
+    input {
+      height: $inputsHeight;
+      &:focus {
+        background: none repeat scroll 0 0 #F4F7F9;
+      }
+    }
+    .add-on {
+      height: $inputsHeight;
+      i {
+        margin-top: 14px;
+      }
     }
     label {
       padding-left: 30px;

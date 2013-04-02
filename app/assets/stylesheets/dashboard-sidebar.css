@@ -28,7 +28,7 @@
 
 .cbp-vimenu li a:hover,
 .cbp-vimenu li:first-child a{
-    background: #47a3da;
+    background: rgba(59,146,204,1);//#47a3da;
     color: #fff;
 }
 
