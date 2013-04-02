@@ -4,6 +4,11 @@ Site: xmomentum.info
 Twitter: @adrrian17
 Location: Monterrey, Mexico
 
+Creador del universo: Carlos Ruiz                     
+Site: N/A
+Twitter: @CharlyGLAMPP
+Location: Monterrey, Mexico
+
 Presidente de la galaxia: Daniel Martinez                      
 Site: N/A
 Twitter: @dtumbolia
@@ -20,6 +25,6 @@ Twitter: @urielable
 Location: Monterrey, Mexico
                             
 /* SITE */                  
-Last update: 2013/03/28                   
+Last update: 2013/04/02                   
 Standards: HTML5                                  
 Software: Sublime Text 2
