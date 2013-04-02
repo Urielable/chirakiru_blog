@@ -2,21 +2,26 @@
 
 %ul.cbp-vimenu
   %li
-    %a.icon-logo{:href => "#"} Logo
+    %a.cbp-vicurrent.icon-logo{:href => "javascript:;"} Logo
   %li
-    %a.icon-archive{:href => "#"} Archive
+    %a.icon-archive{:href => "javascript:;", 'data-to' => '#archive'} Archive
   %li
-    %a.icon-search{:href => "#"} Search
-  %li.cbp-vicurrent
-    %a.icon-pencil{:href => "#"} Pencil
+    %a.icon-search{:href => "javascript:;"} Search
   %li
-    %a.icon-location{:href => "#"} Location
+    %a.icon-pencil{:href => "javascript:;", 'data-to' => '#entry'} Pencil
   %li
-    %a.icon-images{:href => "#"} Images
+    %a.icon-location{:href => "javascript:;"} Location
   %li
-    %a.icon-download{:href => "#"} Download
+    %a.icon-images{:href => "javascript:;"} Images
+  %li
+    %a.icon-download{:href => "javascript:;"} Download
 
 .container
-  - 30.times do |i|
-    foo
-    %br
+  #archive
+    - 30.times do |i|
+      foo
+      %br
+  #entry.hide
+    - 30.times do |i|
+      entry
+      %br

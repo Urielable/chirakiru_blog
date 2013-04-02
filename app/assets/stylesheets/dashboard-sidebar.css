@@ -11,6 +11,7 @@
 }
 
 .cbp-vimenu li a {
+    outline: none;
     background: #f7f7f7;
     display: block;
     text-indent: -500em;
