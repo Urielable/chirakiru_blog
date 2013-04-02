@@ -3,22 +3,22 @@
 .container.dialog
   %header.box
     %h1.header-title Inicio
-  .row-fluid.dialog-main
+  .dialog-main.center
     = form_for(:session, url: sessions_path) do |f|
       .row-fluid
-        .span12
-          .span5
-            %label Email:
-          .span6
-            = f.text_field :email
+        .input-prepend
+          %span.add-on
+            %i.icon-user
+          = f.text_field :email, class:'input-large', placeholder:'chilaquil@chirakiru.com'
       .row-fluid
-        .span12
-          .span5
-            %label Contraseña:
-          .span6
-            = f.password_field :password
+        .input-prepend
+          %span.add-on
+            %i.icon-lock
+          = f.password_field :password, class:'input-large', placeholder:'Password'
       .form-actions
-        = f.submit "Entrar", class:"btn btn-success pull-right"
+        %button.btn.btn-large.btn-block.btn-success{type:"submit", value:"Entrar", name:"commit"}
+          %i.icon-play-circle.icon-white
+          Entrar
 %br
 %br
 %br
