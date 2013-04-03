@@ -1,18 +1,15 @@
 DashboardMenu = (->
   init = ->
-    lis = $('ul.cbp-vimenu li')
+    lis = $('.cbp-vimenu li')
     lis.on 'click', ->
       li = $ @
       lis.removeClass 'cbp-vicurrent'
       li.addClass 'cbp-vicurrent'
 
-    anchors = lis.find 'a'
-    anchors.on 'click', ->
-      a = $ @
+      a = li.find 'a'
       href = a.data 'to'
       do $(".container div:not(#{href})").hide
       do $(href).show
-      false
   
   init: init
 )()
