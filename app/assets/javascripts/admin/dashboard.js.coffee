@@ -8,10 +8,25 @@ DashboardMenu = (->
 
       a = li.find 'a'
       href = a.data 'to'
-      do $(".container div:not(#{href})").hide
+      do $(".container section:not(#{href})").hide
       do $(href).show
   
   init: init
 )()
 
-$(document).on 'ready page:load', DashboardMenu.init
+TextEditor = (->
+  init = ->
+    opts =
+      theme:
+        base: "/themes/base/epiceditor.css"
+        preview: "/themes/preview/github.css"
+        editor: "/themes/editor/epic-chirakiru.css"
+
+    editor = new EpicEditor(opts).load()
+
+  init: init
+)()
+
+$(document).on 'ready page:load', ->
+  do DashboardMenu.init
+  do TextEditor.init

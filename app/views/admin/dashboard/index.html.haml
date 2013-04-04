@@ -2,12 +2,12 @@
 
 %ul.cbp-vimenu
   %li
-    %a.cbp-vicurrent.icon-logo{:href => "javascript:;"} Logo
+    %a.icon-logo{:href => "javascript:;"} Logo
   %li
     %a.icon-archive{:href => "javascript:;", 'data-to' => '#archive'} Archive
   %li
     %a.icon-search{:href => "javascript:;"} Search
-  %li
+  %li.cbp-vicurrent
     %a.icon-pencil{:href => "javascript:;", 'data-to' => '#entry'} Pencil
   %li
     %a.icon-location{:href => "javascript:;"} Location
@@ -17,11 +17,11 @@
     %a.icon-download{:href => "javascript:;"} Download
 
 .container
-  #archive
+  %section#archive.hide
     - 30.times do |i|
       foo
       %br
-  #entry.hide
-    - 30.times do |i|
-      entry
-      %br
+  %section#entry
+    .row-fluid
+      .span12
+        #epiceditor
