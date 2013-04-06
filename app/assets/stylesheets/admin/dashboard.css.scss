@@ -1,4 +1,10 @@
 #epiceditor {
     height: 400px;
-    margin-bottom: 120px;
+}
+
+#entry {
+    .span12 input {
+        max-width: 98%;
+        width: 100%;
+    }
 }

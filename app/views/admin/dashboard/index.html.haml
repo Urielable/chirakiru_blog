@@ -3,25 +3,43 @@
 %ul.cbp-vimenu
   %li
     %a.icon-logo{:href => "javascript:;"} Logo
-  %li
+  %li{title:'Aquí ves las cosas viejas... =/'}
     %a.icon-archive{:href => "javascript:;", 'data-to' => '#archive'} Archive
   %li
     %a.icon-search{:href => "javascript:;"} Search
-  %li.cbp-vicurrent
+  %li.cbp-vicurrent{title:'Aquí escribes tus asombrosas ideas'}
     %a.icon-pencil{:href => "javascript:;", 'data-to' => '#entry'} Pencil
   %li
     %a.icon-location{:href => "javascript:;"} Location
   %li
     %a.icon-images{:href => "javascript:;"} Images
-  %li
-    %a.icon-download{:href => "javascript:;"} Download
+  / %li
+  /   %a.icon-download{:href => "javascript:;"} Download
 
 .container
   %section#archive.hide
     - 30.times do |i|
       foo
       %br
-  %section#entry
+  %section#entry    
+    .btn-toolbar
+      .btn-group
+        %button#publish-post.btn.btn-success.btn-large{title:'¿Estás listo con tu increíble post? ¡Adelante! ;)'}
+          %i.icon-white.icon-share
+          Publica
+        %button#preview-post.btn.btn-info.btn-large{title:'Ve cómo se '}
+          %i.icon-white.icon-eye-open
+          Previsualiza
+      .btn-group
+        %button#load-image.btn.btn-large{title:'Carga una imagen para tu post'}
+          %i.icon-picture
+          Añade imagen
+    .row-fluid
+      .span12
+        %input#post-title{type:'text', title:'Título del post', placeholder:'Título', maxlength:100}
     .row-fluid
       .span12
         #epiceditor
+    .row-fluid
+      .span12
+        %input#post-tags{type:'text', title:'Tags', placeholder:'#tags del post', maxlength:100}

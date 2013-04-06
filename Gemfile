@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'puma'
+gem 'redcarpet', '2.2.2'
 gem 'bson_ext', '1.8.4'
 gem 'mongo', '1.8.4'
 gem 'mongoid', '3.1.2'

@@ -22,11 +22,12 @@ TextEditor = (->
         preview: "/themes/preview/github.css"
         editor: "/themes/editor/epic-chirakiru.css"
 
-    editor = new EpicEditor(opts).load()
+    window.editor = new EpicEditor(opts).load()
 
   init: init
 )()
 
 $(document).on 'ready page:load', ->
-  do DashboardMenu.init
-  do TextEditor.init
+  if /admin\/dashboard/.test(window.location.pathname)
+    do DashboardMenu.init
+    do TextEditor.init
