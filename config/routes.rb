@@ -4,7 +4,7 @@ ChirakiruBlog::Application.routes.draw do
   delete '/logoff', to: 'sessions#destroy', via: :delete
   namespace :admin do
     resources :authors
-    resources :dashboard, only: [:index]
+    resources :dashboard, only: [:index, :new]
   end
   resources :files, only: [:index]
   resources :friends, only: [:index]

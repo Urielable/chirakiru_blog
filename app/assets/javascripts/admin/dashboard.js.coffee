@@ -17,6 +17,7 @@ DashboardMenu = (->
 TextEditor = (->
   init = ->
     opts =
+      clientSideStorage: false
       theme:
         base: "/themes/base/epiceditor.css"
         preview: "/themes/preview/github.css"
@@ -27,7 +28,30 @@ TextEditor = (->
   init: init
 )()
 
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
+
+Commands = (->
+  _preview = null
+
+  init = ->
+    _preview = $ '#preview-post'
+    do _add_listener
+
+  _add_listener = ->
+    _preview.on 'click', _preview_listener
+
+  _preview_listener = ->
+    title = escape(do $('#post-title').val) || 'Sin título'
+    body  = escape do editor.exportFile
+    tags  = escape(do $('#post-tags').val || 'Java sucks!')
+    post  = "post[title]=#{title}&post[body]=#{body}&post[tags]=#{tags}"
+    window.open "/admin/dashboard/new?#{post}"
+
+  init: init
+)()
+
 $(document).on 'ready page:load', ->
-  if /admin\/dashboard/.test(window.location.pathname)
+  if /admin\/dashboard\/?$/.test(window.location.pathname)
     do DashboardMenu.init
     do TextEditor.init
+    do Commands.init

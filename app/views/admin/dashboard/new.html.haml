@@ -1,0 +1,17 @@
+.container
+  .row.post-data
+    .span9
+      %a.post-title{:href => "#permalink"}=@post[:title]
+      %p.post-date= Time.now.strftime '%Y / %m / %d'
+  .row.post-body
+    .span9
+      =raw @post[:body]
+  .row
+    .span9.post-tags
+      %a{:href => "/tags?q=Nada"} #Turtles all the way down
+      %a{:href => "/tags?q=Nada"}= "##{@post[:tags]}"
+      %a{:href => "/tags?q=Nada"} #La belleza del código
+  %hr/
+  #pagination
+    %a.pull-left{:href => "#"} ← Pasado
+    %a.pull-right{:href => "#"} Presente →
