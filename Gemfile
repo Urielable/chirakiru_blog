@@ -28,6 +28,7 @@ group :assets do
   gem 'turbolinks', '1.1.0'
   gem 'modernizr', '2.6.2'
   gem 'haml-rails', '0.4'
+  gem 'messengerjs-rails', '1.3.0'
 end
 
 group :development do
