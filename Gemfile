@@ -29,6 +29,7 @@ group :assets do
   gem 'modernizr', '2.6.2'
   gem 'haml-rails', '0.4'
   gem 'messengerjs-rails', '1.3.0'
+  gem 'dropzonejs-rails', '0.1.5'
 end
 
 group :development do

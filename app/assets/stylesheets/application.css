@@ -13,4 +13,5 @@
  *= require messenger
   *= require messenger-spinner
   *= require messenger-theme-air
+ *= require dropzone/dropzone
  */

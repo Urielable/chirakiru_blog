@@ -43,6 +43,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    dropzonejs-rails (0.1.5)
+      rails (> 3.1)
     erb2haml (0.1.4)
       haml
       hpricot
@@ -151,6 +153,7 @@ DEPENDENCIES
   bootstrap-sass (= 2.3.1.0)
   bson_ext (= 1.8.4)
   coffee-rails (~> 3.2.1)
+  dropzonejs-rails (= 0.1.5)
   erb2haml (= 0.1.4)
   haml-rails (= 0.4)
   html2haml (= 1.0.1)
