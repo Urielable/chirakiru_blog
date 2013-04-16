@@ -1,4 +1,5 @@
 ChirakiruBlog::Application.routes.draw do
+  resources :uploads, only: [:create]
   resources :sessions, only: [:new, :create, :destroy]
   get '/login',  to: 'sessions#new'
   delete '/logoff', to: 'sessions#destroy', via: :delete

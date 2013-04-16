@@ -1,27 +1,14 @@
 - provide(:title, 'Dashboard')
 
-%ul.cbp-vimenu
-  %li
-    %a.icon-logo{:href => "javascript:;"} Logo
-  %li{title:'Aquí ves las cosas viejas... =/'}
-    %a.icon-archive{:href => "javascript:;", 'data-to' => '#archive'} Archive
-  %li
-    %a.icon-search{:href => "javascript:;"} Search
-  %li.cbp-vicurrent{title:'Aquí escribes tus asombrosas ideas'}
-    %a.icon-pencil{:href => "javascript:;", 'data-to' => '#entry'} Pencil
-  %li
-    %a.icon-location{:href => "javascript:;"} Location
-  %li
-    %a.icon-images{:href => "javascript:;"} Images
-  / %li
-  /   %a.icon-download{:href => "javascript:;"} Download
+= render 'dropzone_modal'
+= render 'left_sidebar'
 
 .container
   %section#archive.hide
     - 30.times do |i|
       foo
       %br
-  %section#entry    
+  %section#entry
     .btn-toolbar
       .btn-group
         %button#publish-post.btn.btn-success.btn-large{title:'¿Estás listo con tu increíble post? ¡Adelante! ;)'}
@@ -31,7 +18,7 @@
           %i.icon-white.icon-eye-open
           Previsualiza
       .btn-group
-        %button#load-image.btn.btn-large{title:'Carga una imagen para tu post'}
+        %button#load-image.btn.btn-large{title:'Carga una imagen para tu post', 'data-toggle'=>"modal", 'data-target'=>"#dropzone-container"}
           %i.icon-picture
           Añade imagen
     .row-fluid

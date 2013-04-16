@@ -28,6 +28,9 @@ group :assets do
   gem 'turbolinks', '1.1.0'
   gem 'modernizr', '2.6.2'
   gem 'haml-rails', '0.4'
+  gem 'messengerjs-rails', '1.3.0'
+  gem 'dropzonejs-rails', '0.1.5'
+  gem 'select2-rails', '3.3.1'
 end
 
 group :development do
