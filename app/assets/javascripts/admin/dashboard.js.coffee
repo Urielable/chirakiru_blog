@@ -32,20 +32,32 @@ TextEditor = (->
 
 Commands = (->
   _preview = null
+  _publish = null
 
   init = ->
     _preview = $ '#preview-post'
+    _publish = $ '#publish-post'
     do _add_listener
 
   _add_listener = ->
     _preview.on 'click', _preview_listener
+    _publish.on 'click', _publish_listener
 
   _preview_listener = ->
-    title = escape do $('#post-title').val || 'Sin título'
-    body  = escape do editor.exportFile
-    tags  = escape do $('#post-tags').val || 'Java sucks!'
-    post  = "post[title]=#{title}&post[body]=#{body}&post[tags]=#{tags}"
-    window.open "/admin/dashboard/new?#{post}"
+    p = do __get_post
+    console.log p
+    payload  = "post[title]=#{p.title}&post[body]=#{p.body}&post[tags]=#{p.tags}"
+    window.open "/admin/dashboard/new?#{payload}"
+
+  _publish_listener = ->
+    Post.save do __get_post
+    false
+
+  __get_post = ->
+    post = 
+      'post[title]'     : escape do $('#post-title').val || 'Sin título'
+      'post[body]'      : escape do editor.exportFile
+      'post[tags]'      : escape do $('#post-tags').val || 'Java sucks!'
 
   init: init
 )()
