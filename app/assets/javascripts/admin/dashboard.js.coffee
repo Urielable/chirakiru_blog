@@ -28,6 +28,13 @@ TextEditor = (->
   init: init
 )()
 
+TagsEditor = (->
+  init = ->
+    $('#post-tags').select2 tags:["red", "green", "blue"]
+
+  init: init
+)()
+
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 
 Commands = (->
@@ -54,4 +61,5 @@ $(document).on 'ready page:load', ->
   if /admin\/dashboard\/?$/.test(window.location.pathname)
     do DashboardMenu.init
     do TextEditor.init
+    do TagsEditor.init
     do Commands.init

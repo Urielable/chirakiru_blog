@@ -30,6 +30,7 @@ group :assets do
   gem 'haml-rails', '0.4'
   gem 'messengerjs-rails', '1.3.0'
   gem 'dropzonejs-rails', '0.1.5'
+  gem 'select2-rails', '3.3.1'
 end
 
 group :development do
