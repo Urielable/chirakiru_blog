@@ -13,14 +13,17 @@
       .btn-group
         %button#publish-post.btn.btn-success.btn-large{title:'¿Estás listo con tu increíble post? ¡Adelante! ;)'}
           %i.icon-white.icon-share
-          Publica
-        %button#preview-post.btn.btn-info.btn-large{title:'Ve cómo se '}
+          Publicar
+        %button#preview-post.btn.btn-info.btn-large{title:'Ve cómo se ve'}
           %i.icon-white.icon-eye-open
-          Previsualiza
+          Previsualizar
       .btn-group
         %button#load-image.btn.btn-large{title:'Carga una imagen para tu post', 'data-toggle'=>"modal", 'data-target'=>"#dropzone-container"}
           %i.icon-picture
-          Añade imagen
+          Subir imagen
+      .btn-group
+        %a{title:'Markdown Syntax Reference', target:'_blank', href:'/markdown-syntax-reference.html'}
+          %i.icon-question-sign
     .row-fluid
       .span12
         %input#post-title{type:'text', title:'Título del post', placeholder:'Título', maxlength:100}
