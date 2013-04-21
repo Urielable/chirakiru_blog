@@ -4,8 +4,12 @@
 
 window.Post = (->
   save = (posty) ->
+    console.log posty
     $.post('/posts.json', posty, (response) ->
     'json')
 
+  update = (posty) ->
+
   save: save
+  update: update
 )()

@@ -57,14 +57,19 @@ Commands = (->
     window.open "/admin/dashboard/new?#{payload}"
 
   _publish_listener = ->
+    console.log do __get_post
     Post.save do __get_post
     false
+
+  __get_tag = ->
+    $(".select2-search-choice div").map -> @textContent
 
   __get_post = ->
     post = 
       'post[title]'     : escape do $('#post-title').val || 'Sin título'
       'post[body]'      : escape do editor.exportFile
-      'post[tags]'      : escape do $('#post-tags').val || 'Java sucks!'
+      'post[tags]'      : __get_tag().toArray()
+    
 
   init: init
 )()
