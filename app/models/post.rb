@@ -26,6 +26,10 @@ class Post
     self.tags.unpack('C*').pack('U*')
   end
 
+  def tags_related
+    Tag.find self.tags
+  end
+
   def content
     b = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
         :autolink => true, :space_after_headers => true).render(self.body)

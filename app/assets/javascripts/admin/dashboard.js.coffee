@@ -52,8 +52,8 @@ Commands = (->
 
   _preview_listener = ->
     p = do __get_post
-    title = p['post[title]']
-    body  = p['post[body]']
+    title = escape p['post[title]']
+    body  = escape p['post[body]']
     tags  = p['post[tags]']
     payload  = "post[title]=#{title}&post[body]=#{body}&post[tags]=#{tags}"
     window.open "/admin/dashboard/new?#{payload}"
@@ -68,8 +68,8 @@ Commands = (->
 
   __get_post = ->
     post =
-      'post[title]' : escape do $('#post-title').val || 'Sin título'
-      'post[body]'  : escape do editor.exportFile
+      'post[title]' : do $('#post-title').val || 'Sin título'
+      'post[body]'  : do editor.exportFile
       'post[tags]'  : do __get_tag().toArray
 
   init: init
