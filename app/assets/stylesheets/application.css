@@ -11,8 +11,8 @@
  *= require_self
  *= require_tree .
  *= require messenger
-  *= require messenger-spinner
-  *= require messenger-theme-air
+ *= require messenger-spinner
+ *= require messenger-theme-air
  *= require dropzone/dropzone
  *= require select2
  */
