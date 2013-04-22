@@ -10,7 +10,7 @@ DashboardMenu = (->
       href = a.data 'to'
       do $(".container section:not(#{href})").hide
       do $(href).show
-  
+
   init: init
 )()
 
@@ -52,12 +52,13 @@ Commands = (->
 
   _preview_listener = ->
     p = do __get_post
-    console.log p
-    payload  = "post[title]=#{p.title}&post[body]=#{p.body}&post[tags]=#{p.tags}"
+    title = p['post[title]']
+    body  = p['post[body]']
+    tags  = p['post[tags]']
+    payload  = "post[title]=#{title}&post[body]=#{body}&post[tags]=#{tags}"
     window.open "/admin/dashboard/new?#{payload}"
 
   _publish_listener = ->
-    console.log do __get_post
     Post.save do __get_post
     false
 
@@ -65,11 +66,10 @@ Commands = (->
     $(".select2-search-choice div").map -> @textContent
 
   __get_post = ->
-    post = 
-      'post[title]'     : escape do $('#post-title').val || 'Sin título'
-      'post[body]'      : escape do editor.exportFile
-      'post[tags]'      : __get_tag().toArray()
-    
+    post =
+      'post[title]' : escape do $('#post-title').val || 'Sin título'
+      'post[body]'  : escape do editor.exportFile
+      'post[tags]'  : __get_tag().toArray()
 
   init: init
 )()

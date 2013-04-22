@@ -1,4 +1,5 @@
 ChirakiruBlog::Application.routes.draw do
+  resources :posts
   resources :uploads, only: [:create]
   resources :sessions, only: [:new, :create, :destroy]
   get '/login',  to: 'sessions#new'
@@ -10,8 +11,6 @@ ChirakiruBlog::Application.routes.draw do
   resources :files, only: [:index]
   resources :friends, only: [:index]
   root :to => 'posts#index'
-
-  resources :posts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
