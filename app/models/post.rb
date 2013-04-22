@@ -2,8 +2,18 @@ class Post
   include Mongoid::Document
 
   # Fields
+  field :title       , type: String
+  field :body        , type: String
+  field :tags        , type: Array
+  field :publish_date, type: DateTime
+  field :author_id   , type: Moped::BSON::ObjectId
 
   # Validations
+  validates_presence_of :title, message: "can't be blank!"
+  validates_presence_of :body, message: "can't be blank!"
+  validates_presence_of :tags, message: "can't be blank!"
+  validates_presence_of :publish_date, message: "can't be blank!"
+  validates_presence_of :author_id, message: "can't be blank!"
 
   # Callbacks
 
