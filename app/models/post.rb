@@ -16,6 +16,7 @@ class Post
   validates_presence_of :author_id, message: "can't be blank!"
 
   # Callbacks
+  before_create :create_new_tags
 
   def ptitle
     self.title.unpack('C*').pack('U*')
@@ -29,5 +30,10 @@ class Post
     b = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
         :autolink => true, :space_after_headers => true).render(self.body)
     b.unpack('C*').pack('U*').gsub '&amp;mdash;', '&mdash;'
+  end
+
+  protected
+  def create_new_tags
+    self.tags = self.tags.map { |t| Tag.find_or_create_by(tag:t).id }
   end
 end
