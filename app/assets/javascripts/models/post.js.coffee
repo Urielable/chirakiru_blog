@@ -1,15 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
 window.Post = (->
-  save = (posty) ->
-    console.log posty
-    $.post('/posts.json', posty, (response) ->
-    'json')
-
-  update = (posty) ->
+  save = (posty, success_callback, error_callback) ->
+    $.post '/posts.json', posty, (response) ->
+      success_callback response if typeof(success_callback) is 'function'
+    .error ->
+      do error_callback if typeof(error_callback) is 'function'
 
   save: save
-  update: update
 )()

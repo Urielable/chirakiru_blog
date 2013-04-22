@@ -59,8 +59,9 @@ Commands = (->
     window.open "/admin/dashboard/new?#{payload}"
 
   _publish_listener = ->
-    Post.save do __get_post
-    false
+    Post.save do __get_post, (response) ->
+      Messenger().post message: "Se publicó la entrada #{response.title}. Ahora todo el mundo podrá leerla. Bien hecho. :)"
+    , -> Messenger().post message: "Rayos, algo salió mal. Lo repararemos de inmediato.", type: 'error'
 
   __get_tag = ->
     $(".select2-search-choice div").map -> @textContent
@@ -69,7 +70,7 @@ Commands = (->
     post =
       'post[title]' : escape do $('#post-title').val || 'Sin título'
       'post[body]'  : escape do editor.exportFile
-      'post[tags]'  : __get_tag().toArray()
+      'post[tags]'  : do __get_tag().toArray
 
   init: init
 )()
