@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  include PostsHelper
-
   def index
   end
 
@@ -9,7 +7,6 @@ class PostsController < ApplicationController
   def create
     params[:post][:publish_date] = Time.now
     params[:post][:author_id] = current_user.id
-    #@post.tags = get_tags_id
     @post = Post.new(params[:post])
 
     respond_to do |format|
