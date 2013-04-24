@@ -1,156 +1,78 @@
-body {
-  font-family: 'OpenSansRegular';
-  background: rgba(230,230,230,0.7);
-  font-size: 16px;
-}
-
-header {
-  background-color: rgba(59,146,204,1);
-  //sin aprobación de adrian, pero vale madre
-  &.navbar {
-    width: 100%;
-    position: fixed;
-    z-index: 10;
+.post {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  .post-title {
+    font-size: 18pt;
   }
-}
-
-footer {
-  bottom: 0;
-  background-color: rgba(230,230,230,0.7);
-  width: 100%;
-  position: relative;
-  min-height: 50px;
-  p {
+  .post-date {
+    font-size: 12pt;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: rgb(180, 180, 180);
+  }
+  .post-body {
+    font-size: 12pt;
+    text-align: justify;
+  }
+  .post-tags {
+    //margin-bottom: 15px;
     text-align: center;
-    font-size: 12px;
-    padding-top: 15px;
-    color: rgba(170,170,170,1);  
+    a {
+      color: rgb(180, 180, 180);
+      &:hover {
+        color: red;
+      }
+    }
   }
 }
 
-p + p {
-  margin-top: 0;
+/* Large desktop */
+@media (min-width: 980px) {
+  .page-view .container {
+    max-width: 900px;
+  }
 }
 
-a, a:link, a:hover, a:visited {
-  text-decoration: none;
-  color: rgba(59,146,204,1);
-}
-
-.site {
-  background: rgba(255,255,255,1);
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
   .page-view {
-    padding-top: 110px;
+    //background: green;
+  }
+  .page-view  .container {
+    max-width: 700px;
   }
 }
 
-.container {
-  max-width: 880px;
-}
-
-.center {
-  text-align: center;
-}
-
-#nav {
-  font-family: 'OpenSansRegular';
-  font-size: 15px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-#nav, #nav a {
-  color: rgba(255, 255, 255, 1);
-}
-
-#nav a:hover {
-  border-style: solid;
-  border-width: 1px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-}
-
-#nav span {
-  margin: 0 15px 0 15px;
-}
-
-#pagination {
-  margin-bottom: 80px;
-}
-
-#pagination a.pull-left {
-  float: left;
-}
-
-#pagination a.pull-right {
-  float: right;
-}
-
-
-.header-title {
-  font-size: 25px;
-  font-family: "SFNewRepublic";
-  color: rgba(255, 255, 255, 1);
-  text-align: center;
-  line-height: normal;
-  padding-top: 10px;
-  margin: 0 0 5px 0;
-  &:first-letter {
-    font-size: 40px;
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .page-view {
+    //background: pink;
+    //max-width: 90%;
+  }
+  body {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .page-view  .container {
+    max-width: 540px;
   }
 }
 
-.post-data {
-  text-align: center;
-}
-
-.post-title {
-  font-size: 25px;
-}
-
-.post-date {
-  font-size: 15px;
-  margin-top: 5px;
-  color: rgba(180,180,180,1);
-}
-
-.post-body {
-  font-size: 16px;
-  text-align: justify;
-}
-
-.post-tags {
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.post-tags a {
-  color: rgba(180,180,180,1);
-}
-
-.post-tags a:hover {
-  color: rgba(59,146,204,1);
-}
-
-hr {
-  height: 3px;
-  border: 0;
-  background-color: #c3c3c3;
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #fff));
-  background-image: -webkit-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-  background-image: -moz-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-  background-image: -ms-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-  background-image: -o-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-}
-hr::after {
-  content: '';
-  display: block;
-  height: 1px;
-  background-color: #f7f6f4;
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #c3c3c3));
-  background-image: -webkit-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-  background-image: -moz-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-  background-image: -ms-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-  background-image: -o-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  //.page-view { background: purple; }
+  #nav a {
+    font-size: 14px;
+  }
+  .header-title {
+    font-size: 16px;
+  }
+  body {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .page-view  .container {
+    max-width: 350px;
+  }
 }

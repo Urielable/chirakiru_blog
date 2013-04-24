@@ -1,7 +1,7 @@
-#chirakiru-start
+#chirakiru-start.hidden-phone
   - if signed_in?
-    %a{ href:logoff_path, 'data-no-turbolink' => true, 'data-method' => :delete,  }
-      %i.icon-off{ title: 'Terminar sesión' }
+    %a{ href:logoff_path, 'data-no-turbolink' => true, 'data-method' => :delete }
+      %i.icon-off.icon-white{ title: 'Terminar sesión' }
   - else
     %a{ href:login_path }
-      %i.icon-home{ title: 'Inicia sesión' }
+      %i.icon-home.icon-white{ title: 'Inicia sesión' }

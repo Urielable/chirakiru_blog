@@ -1,5 +1,6 @@
-class Post
+class Post  
   include Mongoid::Document
+  include TimeHelper
 
   # Fields
   field :title       , type: String
@@ -28,6 +29,10 @@ class Post
 
   def tags_related
     Tag.find self.tags
+  end
+
+  def author
+    Admin::Author.find self.author_id
   end
 
   def content
