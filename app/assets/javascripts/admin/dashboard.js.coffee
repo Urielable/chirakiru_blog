@@ -54,8 +54,7 @@ Commands = (->
     p = do __get_post
     title = escape p['post[title]']
     body  = escape p['post[body]']
-    tags  = p['post[tags]']
-    payload  = "post[title]=#{title}&post[body]=#{body}&post[tags]=#{tags}"
+    payload  = "post[title]=#{title}&post[body]=#{body}"
     window.open "/admin/dashboard/new?#{payload}"
 
   _publish_listener = ->
