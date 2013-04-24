@@ -13,6 +13,4 @@
         - post.tags_related.each do |tag|
           %a{:href => "/categories/#{tag.id}"}= "##{tag.tag}"
     %hr
-  #pagination
-    %a.pull-left{:href => "#"} ← Pasado
-    %a.pull-right{:href => "#"} Presente →
+  #bottom-spinner
