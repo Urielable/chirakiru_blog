@@ -3,8 +3,8 @@ class PostsController < ApplicationController
     @posts = Post.all.desc :publish_date
   end
 
-  # GET /admin/authors/1
-  # GET /admin/authors/1.json
+  # GET /admin/post/1
+  # GET /admin/post/1.json
   def show
     @post = Post.find(params[:id])
 
