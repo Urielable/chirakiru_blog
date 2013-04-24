@@ -3,6 +3,18 @@ class PostsController < ApplicationController
     @posts = Post.all.desc :publish_date
   end
 
+  # GET /admin/authors/1
+  # GET /admin/authors/1.json
+  def show
+    @post = Post.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @post }
+    end
+  end
+
+
   # POST /posts.json
   # "post"=>{"title"=>"Greetings", "body"=>"Hello!", "tags"=>["green", "red"]}
   def create
@@ -18,4 +30,5 @@ class PostsController < ApplicationController
       end
     end
   end
+
 end

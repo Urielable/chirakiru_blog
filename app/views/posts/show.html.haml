@@ -1,0 +1,14 @@
+.container
+  .post
+    %a.post-title{:href => "#permalink"}= @post.title
+    .post-date
+      por
+      %a{:href => "/authors/#{@post.author_id}"}= @post.author.first_name
+      en
+      = @post.publish_date.pretty
+      .post-body
+        = raw @post.content
+      .post-tags
+        - @post.tags_related.each do |tag|
+          %a{:href => "/categories/#{tag.id}"}= "##{tag.tag}"
+  %hr
