@@ -23,7 +23,7 @@ MySpinner = (->
 
     target = document.getElementById 'bottom-spinner'
     if target?
-      $(target).css 'opacity', 1
+      #$(target).css 'opacity', 1
     else
       target = document.getElementById 'bottom-spinner'
     spinner = new Spinner(opts).spin target
@@ -31,7 +31,7 @@ MySpinner = (->
   _off = ->
     if spinner?
       do spinner.stop
-      $(target).css 'opacity', 0
+      #$(target).css 'opacity', 0
 
   on: _on
   off: _off

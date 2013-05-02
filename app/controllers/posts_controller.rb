@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.desc :publish_date
+    @posts = Post.all.desc(:publish_date).limit(2)
   end
 
-  # GET /admin/post/1
-  # GET /admin/post/1.json
+  # GET /post/1
+  # GET /post/1.json
   def show
     @post = Post.find(params[:id])
 
@@ -31,4 +31,12 @@ class PostsController < ApplicationController
     end
   end
 
+  # GET /posts/since/:since.json
+  def since
+    date = params[:since].to_datetime
+    @posts = Post.where( :publish_date.lt => date ).desc(:publish_date).limit(3)
+    respond_to do |format|
+      format.json { render json: @posts }
+    end
+  end
 end

@@ -1,4 +1,5 @@
 ChirakiruBlog::Application.routes.draw do
+  get '/posts/since/:since', to: 'posts#since'
   resources :posts
   resources :uploads, only: [:create]
   resources :sessions, only: [:new, :create, :destroy]
