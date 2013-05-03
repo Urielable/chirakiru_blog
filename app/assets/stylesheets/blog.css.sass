@@ -125,6 +125,16 @@ header
   margin-left: auto
   margin-right: auto
   width: 80px
+  transition: all 2000ms ease-in-out
+  &.rotate
+    -webkit-transform: rotate(360deg)
+    transform: rotate(360deg)
+    img
+      -webkit-transform: rotate(1080deg) rotateY(180deg)
+      transform: rotate(1080deg) rotateY(180deg)
+  img
+    transition: all 2000ms ease-in-out
+
 
 #chirakiru-start
   position: fixed

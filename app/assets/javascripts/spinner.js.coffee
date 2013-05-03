@@ -37,3 +37,16 @@ MySpinner = (->
   off: _off
 )()
 window.MySpinner = MySpinner
+
+RabbitSpinner = (->
+  _on = ->
+    rabbit = $('#bottom-spinner')
+    rabbit.removeClass('rotate').addClass('rotate')
+
+  _off = ->
+    $('#bottom-spinner').removeClass('rotate')
+
+  on: _on
+  off: _off
+)()
+window.RabbitSpinner = RabbitSpinner

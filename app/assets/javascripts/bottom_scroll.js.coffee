@@ -4,18 +4,18 @@ BottomScroller = (->
     $(window).off('scroll').on 'scroll', ->
       if $(window).scrollTop() + $(window).height() >= $(document).height()
         return false if new Date() - last < 1000
+        do bottom
         last = new Date()
-        do MySpinner.on
-        Post.since $('.post:last').data('date'), (posts, view) ->
-          if posts.length > 0
-            $(view(post)).insertBefore('#bottom-spinner') for post in posts
-            $("[data-id=#{post._id}]").fadeIn(900) for post in posts
-          else
-            Messenger().post message: '¡Wow! Has leído todas las publicaciones de Chirakiru Puroguramingu. ¡Muchas gracias!', id: 'unique'
-            $('#bottom-spinner i').removeClass('icon-arrow-down').addClass('icon-arrow-up')
-          do MySpinner.off
+
+  bottom = ->
+    Post.since $('.post:last').data('date'), (posts, view) ->
+      if posts.length > 0
+        $(view(post)).insertBefore('#bottom-spinner') for post in posts
+        $("[data-id=#{post._id}]").fadeIn(900) for post in posts
       else
-        do MySpinner.off
+        Messenger().post message: '¡Wow! Has leído todas las publicaciones de Chirakiru Puroguramingu. ¡Muchas gracias!', id: 'unique'
+        $('#bottom-spinner i').removeClass('icon-arrow-down').addClass('icon-arrow-up')
+        do RabbitSpinner.on
 
   init: init
 )()
