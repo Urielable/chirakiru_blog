@@ -34,7 +34,8 @@ class PostsController < ApplicationController
   # GET /posts/since/:since.json
   def since
     date = params[:since].to_datetime
-    @posts = Post.where( :publish_date.lt => date ).desc(:publish_date).limit(3)
+    @posts = Post.where( :publish_date.lt => date )
+      .desc(:publish_date).limit(3).map &:superpower!
     respond_to do |format|
       format.json { render json: @posts }
     end

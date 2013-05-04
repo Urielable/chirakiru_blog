@@ -28,10 +28,10 @@ PostView = (->
             #{post.author}
           </a>
           en
-          #{post.publish_date}
+          #{post.pretty_date}
         </div>
         <div class="post-body">
-          #{post.body}
+          #{post.content}
         </div>
         <div class="post-tags">
           <a href="/categories/123">

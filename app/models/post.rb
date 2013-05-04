@@ -41,6 +41,19 @@ class Post
     b.gsub '&amp;mdash;', '&mdash;'
   end
 
+  def superpower!
+    @author = self.author
+    {
+      _id: self.id,
+      publish_date: self.publish_date,
+      pretty_date: self.publish_date.pretty,
+      title: self.title,
+      author_id: @author._id,
+      author: @author.first_name,
+      content: self.content
+    }
+  end
+
   protected
   def create_new_tags
     self.tags = self.tags.map { |t| Tag.find_or_create_by(tag:t).id }
