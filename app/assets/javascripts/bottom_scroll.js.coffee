@@ -10,8 +10,7 @@ BottomScroller = (->
   bottom = ->
     Post.since $('.post:last').data('date'), (posts, view) ->
       if posts.length > 0
-        $(view(post)).insertBefore('#bottom-spinner') for post in posts
-        $("[data-id=#{post._id}]").fadeIn(1000) for post in posts
+        $(view(post)).insertBefore('#bottom-spinner').fadeIn(1000) for post in posts
       else
         Messenger().post message: '¡Wow! Has leído todas las publicaciones de Chirakiru Puroguramingu. ¡Muchas gracias!', id: 'unique'
         $('#bottom-spinner i').removeClass('icon-arrow-down').addClass('icon-arrow-up')
