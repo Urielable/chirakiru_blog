@@ -20,4 +20,5 @@ BottomScroller = (->
 )()
 
 $(document).on 'ready page:load', ->
-  do BottomScroller.init
+  if /^\/$/.test(window.location.pathname)
+    do BottomScroller.init
