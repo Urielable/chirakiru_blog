@@ -18,6 +18,7 @@ class Post
 
   # Callbacks
   before_create :create_new_tags
+  before_create :generate_post_id
 
   def ptitle
     self.title.unpack('C*').pack('U*')
@@ -33,6 +34,12 @@ class Post
 
   def author
     Admin::Author.find self.author_id
+  end
+
+  def pcontent
+    b = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+        :autolink => true, :space_after_headers => true).render(self.body.unpack('C*').pack('U*'))
+    b.gsub '&amp;mdash;', '&mdash;'
   end
 
   def content
@@ -57,5 +64,11 @@ class Post
   protected
   def create_new_tags
     self.tags = self.tags.map { |t| Tag.find_or_create_by(tag:t).id }
+  end
+
+  def generate_post_id
+    random  = Random.rand(1000000)
+    title   = self.title.strip.gsub /[^\w\d]/, "-"
+    self.id = "#{random}+#{title}"
   end
 end
