@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.desc(:publish_date).limit(2)
+    @posts = Post.all.desc(:publish_date).limit(5)
   end
 
   # GET /post/1

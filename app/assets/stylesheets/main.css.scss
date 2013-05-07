@@ -33,6 +33,21 @@
   }
 }
 
+.reader-stats {
+  background-color: rgb(59, 146, 204);
+  color: white;
+  top: 120px;
+  min-width: 80px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  border-radius: 4px 0 0 4px;
+  box-shadow: -1px 1px 3px 0px rgb(180, 200, 200);
+  &:hover {
+    opacity: 0.9
+  }
+}
+
 /* Large desktop */
 @media (min-width: 980px) {
   .page-view .container {
